@@ -7,7 +7,7 @@ connect '/C=9' ; Conecta o TTPMACRO ao TeraTerm e conecta com a COM1
 ; Atualizado: 24-setembro-2019 (formatacao do arquivo de saida DesviodePlanicidade_Spray.txt)
 ; Atualizado: 12-novembro-2019 (criacao do arquivo RunningFile na pasta Working)
 ; Atualizado: 18-novembro-2019 (validacao de Logon no inicio do programa)
-; Atualizado: 10-dezembro-2019 (Separacao dos dados em 3 arquivos diferentes)
+; Atualizado: 10-dezembro-2019 (separacao dos dados em 3 arquivos diferentes)
 ;
 ; Autor: Ewelim Barros
 ;
