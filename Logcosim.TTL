@@ -1,6 +1,4 @@
-; Conecta o TTPMACRO ao TeraTerm e conecta com a COM1
-connect '/C=9'
-
+connect '/C=9' ; Conecta o TTPMACRO ao TeraTerm e conecta com a COM1 
 ;*********************************************************************************************
 ;
 ; REGISTRO DE DADOS E SINAIS DO SISTEMA 21 (DAVY MCKEE)
@@ -92,7 +90,7 @@ while 1
 		:capturedatapart1
 			wait 'A737[0]- '
 			sendln 'snapshot CoilID AlloyID OperatorRunSpeedTarget OperatorRunEntryTensionTarget' ;Envia comando para aquisitar 4 dados de uma vez
-			sendln 'snapshot CoilID AlloyID OperatorRunSpeedTarget OperatorRunEntryTensionTarget'
+			sendln 'snapshot CoilID AlloyID OperatorRunSpeedTarget OperatorRunEntryTensionTarget' 
 			timeout = 5
 			wait 'CoilID, AlloyID' ;Espera a string ou 5 segundos
 		:openlogdata
@@ -156,9 +154,9 @@ while 1
 			str2int num4 groupmatchstr4 ;Converte a parte 4 do codigo de string para inteiro
 
 			code2str strvar1 num1 ;Obtem o caractere ASCII correspondente a parte 1 do codigo e armazena em strvar1
-			code2str strvar2 num2 ;Obtem o caractere ASCII correspondente a parte 1 do codigo e armazena em strvar2
-			code2str strvar3 num3 ;Obtem o caractere ASCII correspondente a parte 1 do codigo e armazena em strvar3
-			code2str strvar4 num4 ;Obtem o caractere ASCII correspondente a parte 1 do codigo e armazena em strvar4
+			code2str strvar2 num2 ;Obtem o caractere ASCII correspondente a parte 2 do codigo e armazena em strvar2
+			code2str strvar3 num3 ;Obtem o caractere ASCII correspondente a parte 3 do codigo e armazena em strvar3
+			code2str strvar4 num4 ;Obtem o caractere ASCII correspondente a parte 4 do codigo e armazena em strvar4
 			AlloyID = ' '
 			sprintf2 AlloyID '%s%s%s%s' strvar1 strvar2 strvar3 strvar4  ;Junta as strings e armazena em AlloyID
 		:rewritefile1	
