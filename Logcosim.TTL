@@ -71,8 +71,8 @@ while 1
 		:started
 			fhandle = 0
 		  	sendln 'snapshot MillInRun -s1' ;Envia comando para obter flag Mill in Run de 1 em 1 segundo
-		    sendln 'snapshot MillInRun -s1' ;Envia comando para obter flag Mill in Run de 1 em 1 segundo
-		    sendln 'snapshot MillInRun -s1' ;Envia comando para obter flag Mill in Run de 1 em 1 segundo
+		    sendln 'snapshot MillInRun -s1' 	;Envia comando para obter flag Mill in Run de 1 em 1 segundo
+		    sendln 'snapshot MillInRun -s1' 	;Envia comando para obter flag Mill in Run de 1 em 1 segundo
 		    timeout = 90000
 			wait'MillInRun:   1';Espera que o Laminador comece a rodar para aquisitar Dados
 		    if result=1 send #3 ; Envia CTRL+C para parar de obter flag Mill in Run
@@ -106,7 +106,7 @@ while 1
 			CoilIDstr = ' '
 			AlloyIDstr = ' '
 			fileopen fhandle dir_log_dados_1 0 ;Abre o arquivo Dados_1.txt com o cursor no seu inicio
-			filestrseek fhandle 'CoilID:  ' ;Procura pelo CoilID e move o cursor para o proximo caractere
+			filestrseek fhandle 'CoilID:  '	;Procura pelo CoilID e move o cursor para o proximo caractere
 			if result=1 then
 			   filereadln fhandle CoilIDstr ;Le a linha do arquivo e armazena o codigo na string CoilIDstr
 			endif
@@ -293,7 +293,7 @@ while 1
 		:capture
 			wait 'A737[0]- ' ;Espera pedido de comando
 			sendln 'snapshot ShapeControlDeviations PercentSprayLevel' ;Envia comando para obter array de Desvio de planicidade 
-			sendln 'snapshot ShapeControlDeviations PercentSprayLevel' ;Envia comando para obter array de Desvio de planicidade
+			sendln 'snapshot ShapeControlDeviations PercentSprayLevel' 
 			timeout = 0
 			mtimeout = 50 ;Tempo atualizado em 24/09/2019 - Ewelim (Anterior = 250)
 			wait 'timeoutflag'
@@ -303,7 +303,7 @@ while 1
 			timeout = 0
 			mtimeout = 1500 ;Tempo atualizado em 24/09/2019 - Ewelim (Anterior = 950)
 			wait 'timeoutflag'
-			if result=0 goto closelog  ;Apos 1.2s, encerra o log
+			if result=0 goto closelog  ;Apos 1.5s, encerra o log
 		:closelog	 
 			SprayArray = ' '
 			tempfl = "R:\Working\DesviodePlanicidadeSpraytemp.txt"
